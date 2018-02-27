@@ -16,7 +16,10 @@ let db = firebase.database();
 
 // read from a file
 var workbook = new Excel.Workbook();
-workbook.xlsx.readFile('../public/excel/format_fisiser_concedii.xlsx')
+var path = require('path');
+var root = path.dirname(require.main.filename);
+
+workbook.xlsx.readFile(root + '/public/excel/format_fisiser_concedii.xlsx')
     .then(function() {
         // use workbook
         // var worksheet = workbook.getWorksheet('CO nou');
@@ -51,16 +54,36 @@ workbook.xlsx.readFile('../public/excel/format_fisiser_concedii.xlsx')
                 jobDescription: row.getCell(32).value
             });
         }
+    })
+    .catch(function() {
+        console.log("error when reading the file")
     });
 
-var ref = db.ref("employees/");
+// var ref = db.ref("employees/");
 var count = 0;
-ref.on('value',function(snap) {
-    snap.forEach(function(child) {
-        if(child.val().name != undefined){
-          count++;
-          console.log(child.val().name);
-        }
+
+var testDb = function() {
+    var names = '';
+    ref.on('value',function(snap) {
+        snap.forEach(function(child) {
+            console.log(child.val().name);
+            if(child.val().name != undefined){
+              names += child.val().name;
+            }
+          });
+    });
+
+    return names;
+}
+
+exports.testingData = function testing(req, resp, next) {
+    let ref = db.ref('employees');
+    var test = [];
+    ref.orderByKey().on("child_added", function(snapshot) {
+        console.log(snapshot.key);
+        test.push(snapshot.key);
       });
-    console.log(count);
-});
+    resp.json(test);
+  }
+
+// export default testDb;
