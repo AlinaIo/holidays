@@ -76,14 +76,20 @@ var testDb = function() {
     return names;
 }
 
-exports.testingData = function testing(req, resp, next) {
+exports.testingData = function testing(req, res, next) {
     let ref = db.ref('employees');
     var test = [];
-    ref.orderByKey().on("child_added", function(snapshot) {
-        console.log(snapshot.key);
-        test.push(snapshot.key);
+    var emp = {};
+    ref.on("value", function(snapshot) {
+        console.log((Object.values(snapshot.val())[0].name).trim());
+        emp = {
+            name: (Object.values(snapshot.val())[0].name).trim(),
+            employeeNumber: (Object.values(snapshot.val())[0].employeeNumber).trim()
+        }
+        test.push(emp);
+        console.log('test', test);
       });
-    resp.json(test);
+    res.json(test);
   }
 
 // export default testDb;
