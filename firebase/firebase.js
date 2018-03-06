@@ -59,32 +59,33 @@ workbook.xlsx.readFile(root + '/public/excel/format_fisiser_concedii.xlsx')
         console.log("error when reading the file")
     });
 
-// var ref = db.ref("employees/");
-var count = 0;
-
-var testDb = function() {
-    var names = '';
-    ref.on('value',function(snap) {
-        snap.forEach(function(child) {
-            console.log(child.val().name);
-            if(child.val().name != undefined){
-              names += child.val().name;
-            }
-          });
-    });
-
-    return names;
-}
 
 exports.testingData = function testing(req, res, next) {
     let ref = db.ref('employees');
     var test = [];
     var emp = {};
+    var values;
     ref.on("value", function(snapshot) {
-        console.log((Object.values(snapshot.val())[0].name).trim());
+        values = Object.values(snapshot.val())[37];
+        console.log(values.january);
         emp = {
-            name: (Object.values(snapshot.val())[0].name).trim(),
-            employeeNumber: (Object.values(snapshot.val())[0].employeeNumber).trim()
+            name: (values.name).trim(),
+            employeeNumber: (values.employeeNumber).trim(),
+            daysPreviousYear: values.daysPreviousYear,
+            daysCurrentYear: values.daysCurrentYear,
+            totalDaysRemaining: values.totalDaysRemaining,
+            january: values.january,
+            february:(values.february),
+            march:(values.march),
+            april:(values.april),
+            may:(values.may),
+            june:(values.june),
+            july:(values.july),
+            august:(values.august),
+            september:(values.september),
+            october:(values.october),
+            november:(values.november),
+            december:(values.december)
         }
         test.push(emp);
         console.log('test', test);

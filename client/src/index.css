@@ -1,5 +1,40 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.list-item {
+  line-height: 500%;
+  background-color: grey;
+}
+
+.list-item__title {
+  padding-left: 5%;
+  color: white;
+  font-size: 300%;
+  float: left;
+  position: relative;
+}
+
+.list-item__data {
+  color: white;
+  padding-right: 5%;
+  font-size: 300%;
+  text-align: right;
+}
+
+.january {
+  background-image: url("./img/january.jpg");
+}
+.february {
+  background-image: url("./img/giphy.gif");
 }
