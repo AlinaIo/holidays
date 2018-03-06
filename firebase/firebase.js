@@ -71,6 +71,7 @@ exports.testingData = function testing(req, res, next) {
         emp = {
             name: (values.name).trim(),
             employeeNumber: (values.employeeNumber).trim(),
+            employmentDate: values.employmentDate,
             daysPreviousYear: values.daysPreviousYear,
             daysCurrentYear: values.daysCurrentYear,
             totalDaysRemaining: values.totalDaysRemaining,
