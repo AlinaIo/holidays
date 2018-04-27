@@ -1,4 +1,0 @@
-{
-    "presets": ["es2015", "satge-2"],
-    "plugins": []
-}
