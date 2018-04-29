@@ -1,82 +1,65 @@
-.section-cards {
-  background-color: $color-grey-light-1;
-  padding: 25rem 0 15rem 0;
-  margin: 0 auto;
+.header_desktop {
+  background: rgba(#23447a, 0.65);
+  border-radius: 25px;
+  height: 8rem;
+  width: 25rem;
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 10%;
 }
 
-.row {
-  max-width: $grid-width;
-  margin: 0 auto;
-
-  &:not(:last-child) {
-      margin-bottom: 1rem;
-  }
-  
-  [class^="col-"] {
-      float: left;
-
-      &:not(:last-child) {
-          margin-right: 1rem;
-      }
-  }
-
-  .col-1-of-2 {
-      width: calc((100% - 6rem) / 2);
-      
-  }
-
-  .col-1-of-3 {
-      width: calc((100% - 2 * 6rem) / 3);
-  }
-
-  .col-2-of-3 {
-      width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
-  }
-
-  .col-1-of-4 {
-      width: calc((100% - 3 * 6rem) / 4);
-  }
-
-  .col-2-of-4 {
-      width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
-  }
-
-  .col-3-of-4 {
-      width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
-  }
-
+.header_desktop__title {
+  padding-left: 5%;
+  color: white;
+  font-size: 200%;
+  font-weight: 200;
+  font-family: "Helvetica Neue", sans-serif;
+  position: relative;
+  text-align: center;
+}
+.header_desktop__data {
+  padding-left: 5%;
+  color: white;
+  font-size: 100%;
+  font-weight: 200;
+  font-family: "Helvetica Neue", sans-serif;
+  position: relative;
+  text-align: center;
 }
 
-.section-cards {
-  background-color: lightgrey;
-  padding: 8rem 0 8rem 0;
+.activity {
+  background: rgba(#23447a, 0.65);
+  border-radius: 25px;
+  height: 25.5rem;
+  width: 25rem;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 10%;
 }
 
 .card {
   perspective: 100rem;
   -moz-perspective: 100rem;
-  height: 23rem;
-  margin: 0;
+  height: 10rem;
+  margin: 10;
   
   &__side {
-    height: 23rem;
+    height: 100%;
     transition: all 1s ease;
     position: absolute;
-    width: 50%;
+    width: 100%;
     backface-visibility: hidden;
-    border-radius: 55px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+    box-shadow: 0 1.5rem 4rem rgba($color-shade, 0.15);
     &--front {
       background-color: white;
       color: teal;
-      margin-left: 20%;
     }
     &--back {
       transform: rotateY(180deg);
-      margin-left: 20%;
       &-1 {
-        background-image: linear-gradient(to right bottom, $color-january-light, $color-january-dark);
+        background-image: linear-gradient(to right bottom, $color-back-light, $color-back-dark);
       }
     }
   }
@@ -89,39 +72,90 @@
 
   &__picture {
     background-size: cover;
-    height: 11rem;
+    height: 4rem;
     background-blend-mode: screen;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
     position: relative;
 
     &--1 {
-      background-image: linear-gradient(to right bottom, $color-january-light, $color-january-dark),
+      background-image: linear-gradient(to right bottom, $color-shade-light, $color-shade-dark),
       url("../../../img/january.gif");
     }
 
     &--2 {
       background-image: linear-gradient(to right bottom, 
-      $color-january-light, $color-january-dark),
+      $color-shade-light, $color-shade-dark),
       url("../../../img/february.jpg");
     }
 
     &--3 {
       background-image: linear-gradient(to right bottom, 
-      $color-january-light, $color-january-dark),
+      $color-shade-light, $color-shade-dark),
       url("../../../img/march.jpg");
+    }
+
+    &--4 {
+      background-image: linear-gradient(to right bottom, $color-shade-light, $color-shade-dark),
+      url("../../../img/april.jpg");
+    }
+
+    &--5 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/may.jpg");
+    }
+
+    &--6 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/june.jpg");
+    }
+
+    &--7 {
+      background-image: linear-gradient(to right bottom, $color-shade-light, $color-shade-dark),
+      url("../../../img/july.jpg");
+    }
+
+    &--8 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/august.png");
+    }
+
+    &--9 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/september.jpg");
+    }
+
+    &--10 {
+      background-image: linear-gradient(to right bottom, $color-shade-light, $color-shade-dark),
+      url("../../../img/october.jpg");
+    }
+
+    &--11 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/november.gif");
+    }
+
+    &--12 {
+      background-image: linear-gradient(to right bottom, 
+      $color-shade-light, $color-shade-dark),
+      url("../../../img/december.jpg");
     }
   }
 
   &__heading {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 100;
     text-transform: uppercase;
     text-align: right;
     color: white;
     position: absolute;
-    top: 5rem;
-    right: 0.7rem;
+    top: 2rem;
+    right: 0.8rem;
     width: 75%;
   }
 
@@ -130,15 +164,27 @@
     
     &--1 {
       background-image: linear-gradient(to right bottom, 
-      rgba($color-january-dark, .50),
-      rgba($color-january-light, .50))
+      rgba($color-back-dark, .90),
+      rgba($color-back-light, .90));
        }
   }
 
+  &__heading_september {
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    width: 75%;
+  }
+
   &__details {
-    font-size: 7rem;
+    font-size: 4rem;
     text-align: center;
-    color: $color-january-dark;
+    color: $color-back-dark;
   }
 }
 

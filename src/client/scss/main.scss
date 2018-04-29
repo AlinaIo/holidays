@@ -1,3 +1,19 @@
 @import "./_mobile.scss";
 @import "./_variables.scss";
 @import "./_desktop.scss";
+@import "./_grid.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+    background-image: url("../../../img/sea.gif");
+  }

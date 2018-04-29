@@ -111,53 +111,236 @@ class App extends Component {
             />
           </ul>
         </div>
-
-        <div className="row show-for-desktop">
-          <div className="col-1-of-3">
-            <div className="card">
-              <div className="card__side card__side--front">
-                <div className="card__picture card__picture--1">&nbsp;</div>
-                <h4 className="card__heading">
-                  <span class="card__heading-span card__heading-span--1">
-                    January
-                  </span>
-                </h4>
-                <div className="card__details">{this.state.january}</div>
-              </div>
-              <div className="card__side card__side--back card__side--back-1">
-                BACK
-              </div>
+        <div className="wrapper show-for-desktop">
+          <div className="header_desktop">
+            <div>
+              <h1 className="header_desktop__title">
+                Hello {this.state.name.split(" ")[1]}
+              </h1>
             </div>
+            <p className="header_desktop__data">
+              {"@Haufe for "}
+              {moment([
+                this.state.employmentDate.split("/")[2],
+                this.state.employmentDate.split("/")[1],
+                this.state.employmentDate.split("/")[0]
+              ]).toNow(true)}
+            </p>
+            <p className="header_desktop__data">
+              Total Days:{" "}
+              {this.state.daysCurrentYear + this.state.daysPreviousYear} -
+              Remaining Days: {this.state.totalDaysRemaining}
+            </p>
           </div>
-          <div className="col-1-of-3">
-            <div className="card">
-              <div className="card__side card__side--front">
-                <div className="card__picture card__picture--2">&nbsp;</div>
-                <div className="card__heading">
-                  <span class="card__heading-span card__heading-span--1">
-                    February
-                  </span>
+          <div className="activity">
+          <div>
+              <h1 className="header_desktop__title">
+                Activity
+              </h1>
+            </div>
+            <p className="header_desktop__data">
+              - recent activity
+            </p>
+          </div>
+          <div className="rectangle">
+            <div class="game-board">
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--1">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        January
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.january}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
                 </div>
-                <div className="card__details">{this.state.february}</div>
               </div>
-              <div className="card__side card__side--back card__side--back-1">
-                BACK
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--2">&nbsp;</div>
+                    <div className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        February
+                      </span>
+                    </div>
+                    <div className="card__details">{this.state.february}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="col-1-of-3">
-            <div className="card">
-              <div className="card__side card__side--front">
-                <div className="card__picture card__picture--3">&nbsp;</div>
-                <h4 className="card__heading">
-                  <span class="card__heading-span card__heading-span--1">
-                    March
-                  </span>
-                </h4>
-                <div className="card__details">{this.state.march}</div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--3">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        March
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.march}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
               </div>
-              <div className="card__side card__side--back card__side--back-1">
-                BACK
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--4">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        April
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.april}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--5">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        May
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.may}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--6">&nbsp;</div>
+                    <div className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        June
+                      </span>
+                    </div>
+                    <div className="card__details">{this.state.june}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--7">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        July
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.july}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--8">&nbsp;</div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        August
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.august}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--9">&nbsp;</div>
+                    <h4 className="card__heading_september">
+                      <span className="card__heading-span card__heading-span--1">
+                        September
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.september}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--10">
+                      &nbsp;
+                    </div>
+                    <div className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        October
+                      </span>
+                    </div>
+                    <div className="card__details">{this.state.october}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--11">
+                      &nbsp;
+                    </div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        November
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.november}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
+              </div>
+              <div class="box">
+                <div className="card">
+                  <div className="card__side card__side--front">
+                    <div className="card__picture card__picture--12">
+                      &nbsp;
+                    </div>
+                    <h4 className="card__heading">
+                      <span className="card__heading-span card__heading-span--1">
+                        December
+                      </span>
+                    </h4>
+                    <div className="card__details">{this.state.december}</div>
+                  </div>
+                  <div className="card__side card__side--back card__side--back-1">
+                    BACK
+                  </div>
+                </div>
               </div>
             </div>
           </div>
